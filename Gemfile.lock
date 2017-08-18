@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/eventmachine/eventmachine.git
+  revision: 6f22a86950525b014820a64b628f352dcc7035b7
+  branch: master
+  specs:
+    eventmachine (1.2.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -57,7 +64,6 @@ GEM
     daemons (1.2.4)
     debug_inspector (0.0.3)
     erubis (2.7.0)
-    eventmachine (1.2.5)
     execjs (2.7.0)
     ffi (1.9.18)
     globalid (0.4.0)
@@ -193,6 +199,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  eventmachine!
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
