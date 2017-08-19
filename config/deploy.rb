@@ -86,7 +86,7 @@ task :deploy => :environment do
 
     to :launch do
       queue " bundle exec thin config -C 07102017.yml -c #{deploy_to}/#{current_path}/ --servers 3 -e production -p 3000 "
-      queue " thin restart -C #{deploy_to}/#{shared_path}/07102017.yml"
+      queue " bundle exec thin restart -C #{deploy_to}/#{shared_path}/07102017.yml"
     end
   end
 end
