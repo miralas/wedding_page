@@ -1,18 +1,27 @@
-= request.ip
 .container
   .row
     .col-md-2
     .col-md-8
-      #wedding_body
-        %h1
-          ДО НАШЕЙ СВАДЬБЫ ОСТАЛОСЬ:
-        
-        %h3#wedding
-          = @days
-          дней
-        %br
-        %h2.red
-          %span.glyphicon.glyphicon-heart.red
-          Я ЛЮБЛЮ ТЕБЯ!
-          %span.glyphicon.glyphicon-heart.red
+      - if @aliens
+        #wedding_body
+          %h1
+            ДО НАШЕЙ СВАДЬБЫ ОСТАЛОСЬ:
+          
+          %h3#wedding
+            = @days
+            дней
+          %br
+          %h2.red
+            %span.glyphicon.glyphicon-heart.red
+            Я ЛЮБЛЮ ТЕБЯ!
+            %span.glyphicon.glyphicon-heart.red
+      - else
+        #wedding_body
+          %h1
+            ДО СВАДЬБЫ АЛЁЕНЫ И МИХАИЛА ОСТАЛОСЬ:
+          
+          %h3#wedding
+            = @days
+            дней
+
     .col-md-2
