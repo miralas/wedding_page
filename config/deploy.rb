@@ -86,7 +86,7 @@ task :deploy => :environment do
 
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
-      queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      queue "bundle exec thin restart -C 07102017.yml"
     end
   end
 end
