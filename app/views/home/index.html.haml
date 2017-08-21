@@ -5,6 +5,14 @@
       - if @aliens
         #wedding_body
           %h1
+            ДО СВАДЬБЫ АЛЁНЫ И МИХАИЛА ОСТАЛОСЬ:
+          
+          %h3#wedding
+            = @days
+            дней
+      - else
+        #wedding_body
+          %h1
             ДО НАШЕЙ СВАДЬБЫ ОСТАЛОСЬ:
           
           %h3#wedding
@@ -15,13 +23,5 @@
             %span.glyphicon.glyphicon-heart.red
             Я ЛЮБЛЮ ТЕБЯ!
             %span.glyphicon.glyphicon-heart.red
-      - else
-        #wedding_body
-          %h1
-            ДО СВАДЬБЫ АЛЁНЫ И МИХАИЛА ОСТАЛОСЬ:
-          
-          %h3#wedding
-            = @days
-            дней
 
     .col-md-2
