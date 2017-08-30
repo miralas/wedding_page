@@ -85,8 +85,9 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
+      queue " bundle exec thin stop"
       queue " bundle exec thin config -C 07102017.yml -c #{deploy_to}/#{current_path}/ --servers 1 -e production -p 3000 "
-      queue " bundle exec thin restart -C #{deploy_to}/#{shared_path}/07102017.yml"
+      queue " bundle exec thin start -C #{deploy_to}/#{shared_path}/07102017.yml"
     end
   end
 end
