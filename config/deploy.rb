@@ -75,6 +75,7 @@ task :deploy => :environment do
     # Put things to run locally before ssh
   end
   deploy do
+    queue " bundle exec thin stop -C #{deploy_to}/#{shared_path}/07102017.yml"
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
@@ -85,7 +86,6 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      queue " bundle exec thin stop -C #{deploy_to}/#{shared_path}/07102017.yml"
       queue " bundle exec thin config -C 07102017.yml -c #{deploy_to}/#{current_path}/ --servers 1 -e production -p 3000 "
       queue " bundle exec thin start -C #{deploy_to}/#{shared_path}/07102017.yml"
     end
